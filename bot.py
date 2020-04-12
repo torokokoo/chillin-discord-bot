@@ -2,14 +2,14 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 
-token = "Njk4NjE1NjU5MzQ4NjIzNDcw.XpJPNQ.qmfxPHpBvOC6eO2yypat193QqqE"
+token = ""
 
 prefix="?"
 client = commands.Bot(command_prefix=prefix)
 client.remove_command("help")
 
 # ID (Cambiarla al cambiar de servidor)
-# id = "663427143430045728"
+# id = ""
 
 @client.event
 async def on_ready():
