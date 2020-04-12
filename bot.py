@@ -45,14 +45,77 @@ async def admins(ctx):
 ### ticket command
 @client.command(pass_context = True)
 async def ticket(ctx):
-    await ctx.send("Has creado un ticket con exito, ingresa al canal de tickets para ayudarte, te responderemos lo antes posible :D")
-    user = ctx.message.author
-    role = discord.utils.get(ctx.guild.roles, name="ticket")
+    i=0
 
-    await user.add_roles(role)
+    for guild in client.guilds:
+        for member in guild.members:
+            for role in member.roles:
+                if role.name == "ticket":
+                    i = i+1
 
-    print("ticket command just ran")
+    print(i)
+    if i >= 1:
+        a = 0
 
+        for guild in client.guilds:
+            for member in guild.members:
+                for role in member.roles:
+                    if role.name == "ticket2":
+                        a = a + 1
+
+        print(a)
+        if a == 0:
+            embed = discord.Embed(title="Creado correctamente",
+                                  description="Por favor dirigete al canal #ticket creado en la sección de soporte solamente para ti!, mientras alguien te atiende por favor danos una explicación del problema en ese canal",
+                                  color=0xff2968)
+            embed.set_author(name="Sistema de Tickets", icon_url="http://url.torokoko.cl/chillinicon")
+            await ctx.send(embed=embed)
+
+            user = ctx.message.author
+            role = discord.utils.get(ctx.guild.roles, name="ticket2")
+
+            await user.add_roles(role)
+
+        else:
+            b = 0
+
+            for guild in client.guilds:
+                for member in guild.members:
+                    for role in member.roles:
+                        if role.name == "ticket3":
+                            b = b + 1
+
+            if b == 0:
+                embed = discord.Embed(title="Creado correctamente",
+                                      description="Por favor dirigete al canal #ticket creado en la sección de soporte solamente para ti!, mientras alguien te atiende por favor danos una explicación del problema en ese canal",
+                                      color=0xff2968)
+                embed.set_author(name="Sistema de Tickets", icon_url="http://url.torokoko.cl/chillinicon")
+                await ctx.send(embed=embed)
+
+                user = ctx.message.author
+                role = discord.utils.get(ctx.guild.roles, name="ticket3")
+
+                await user.add_roles(role)
+
+            else:
+                embed = discord.Embed(title="Capacidad superada",
+                                      description="Lo sentimos pero ya tenemos muchos tickets por el momento, por favor intentalo más tarde o comenta tu problema por aquí",
+                                      color=0xff2968)
+                embed.set_author(name="Sistema de Tickets", icon_url="http://url.torokoko.cl/chillinicon")
+                await ctx.send(embed=embed)
+
+
+    else:
+        embed = discord.Embed(title="Creado correctamente",
+                              description="Por favor dirigete al canal #ticket creado en la sección de soporte solamente para ti!, mientras alguien te atiende por favor danos una explicación del problema en ese canal",
+                              color=0xff2968)
+        embed.set_author(name="Sistema de Tickets", icon_url = "http://url.torokoko.cl/chillinicon")
+        await ctx.send(embed=embed)
+
+        user = ctx.message.author
+        role = discord.utils.get(ctx.guild.roles, name="ticket")
+
+        await user.add_roles(role)
 
 ### Author command
 @client.command(pass_context = True)
