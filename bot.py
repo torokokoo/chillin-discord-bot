@@ -62,6 +62,7 @@ async def author(ctx):
 
 #### Clear channel messages (by default 100)
 @client.command(pass_context = True)
+@commands.has_any_role('Developer', 'Owner', 'Admin', 'Moderador', 'Dueño')
 async def clear(ctx, amount=100):
     await ctx.channel.purge(limit=amount)
 
