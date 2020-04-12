@@ -13,3 +13,5 @@ It's more like a personal project but I uploaded it anyways, feel free to check 
 ### How tickets work
 It's really easy and not automatized at all, it just gives a "ticket" role to the user that ran the command, with this role you can access to a #ticket channel that is only visible for him (ticket role) and admins.
 Once the problem is solved you must remove the ticket role so he can't access again.
+
+In **update 1.01** now you have 3 ticket roles, so you can have 3 different and **private** tickets, in case there is already 3 tickets going, it's going to say that you have to wait or try with DM
